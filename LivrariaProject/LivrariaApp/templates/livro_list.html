@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de livros
+{% endblock title %}
+
+{% block tituloPagina %}
+Listagem de Livros
+{% endblock tituloPagina %}
+
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Autor</th>
+      <th>Titulo</th>
+      <th>Ano</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for livro in lista %}
+    <tr>
+      <td>{{ livro.autor }}</td>
+      <td>{{ livro.titulo }}</td>
+      <td>{{ livro.anoPublicacao }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<button type="submit" class="btn btn-primary">
+    Cadastrar
+</button>
+
+{% endblock content %}
