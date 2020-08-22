@@ -29,6 +29,9 @@ Listagem de Livros
         <a href="{% url 'livro_edit' pk=livro.pk %}">
             <span class='glyphicon glyphicon-pencil'></span>
         </a>
+        <a href="{% url 'livro_remove' pk=livro.pk %}">
+          <span class='glyphicon glyphicon-trash'></span>
+      </a>
       </td>
     </tr>
   {% endfor %}
