@@ -13,3 +13,10 @@ def livro_list(request, template_name='livro_list.html'):
     livro = Livro.objects.all()
     livros = {'lista': livro}
     return render(request, template_name, livros)
+
+def livro_new(request, template_name='livro_form.html'):
+    form = LivroForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('listar_livros')
+    return render(request, template_name, {'form':form})
