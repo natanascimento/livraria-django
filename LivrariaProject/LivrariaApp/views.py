@@ -20,3 +20,14 @@ def livro_new(request, template_name='livro_form.html'):
         form.save()
         return redirect('listar_livros')
     return render(request, template_name, {'form':form})
+
+def livro_edit(request, pk, template_name='livro_form.html'):
+    livro = get_object_or_404(Livro, pk=pk)
+    if request.method == "POST":
+        form = LivroForm(request.POST, instance=livro)
+        if form.is_valid():
+            livro = form.save()
+            return redirect('listar_livros')
+    else:
+        form = LivroForm(instance=livro)
+    return render (request, template_name, {'form':form})
