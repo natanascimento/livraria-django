@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Listagem de livros
+Página Principal
 {% endblock title %}
 
 {% block tituloPagina %}
 Listagem de Livros
 {% endblock tituloPagina %}
 
-{% block content %}
+{% block navbar %}
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+{% endblock %}
 
+{% block content %}
 <table class="table">
   <thead>
     <tr>
