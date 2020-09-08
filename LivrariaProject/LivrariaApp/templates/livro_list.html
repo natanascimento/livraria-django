@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Página Principal
+Listagem de livros
 {% endblock title %}
 
 {% block tituloPagina %}
 Listagem de Livros
 {% endblock tituloPagina %}
 
-{% block navbar %}
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-</nav>
-{% endblock %}
-
 {% block content %}
+
 <table class="table">
   <thead>
     <tr>
@@ -36,7 +31,11 @@ Listagem de Livros
         </a>
         <a href="{% url 'livro_remove' pk=livro.pk %}">
           <span class='glyphicon glyphicon-trash'></span>
-      </a>
+        </a>  
+        <a href="{% url 'livro_qr' pk=livro.pk %}">
+          <span class='glyphicon glyphicon-qrcode'>
+          </span>
+        </a>
       </td>
     </tr>
   {% endfor %}

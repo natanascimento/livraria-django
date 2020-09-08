@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from LivrariaApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('LivrariaApp.urls')),
+    path(r'', views.livro_list, name='listar_livros'),
+    path(r'^livro_new/', views.livro_new, name='livro_new'),
+    path(r'^livro_edit/(?P<pk>[0-9]+)', views.livro_edit, name='livro_edit'),
+    path(r'^livro_remove/(?P<pk>[0-9]+)', views.livro_remove, name='livro_remove'),
+    path(r'^livro_qr/(?P<pk>[0-9]+)', views.livro_qr, name='livro_qr'),
 ]

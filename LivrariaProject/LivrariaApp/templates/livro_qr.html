@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% load qr_code %}
+
+{% block title %}
+Gerenciador de QR Code
+{% endblock title %}
+
+{% block tituloPagina %}
+Gerenciador de QR Code
+{% endblock tituloPagina %}
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <h4>Tem certeza que deseja gerar o QR Code do livro "{{ livro.titulo }}"?</h4>
+    <br/>
+    <button type="submit" class="btn btn-primary">
+        Gerar QR
+    </button>
+</form>
+
+{% endblock content %}
